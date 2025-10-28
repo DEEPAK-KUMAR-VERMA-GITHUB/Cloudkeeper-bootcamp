@@ -168,7 +168,7 @@ body {
             justify-content: space-around;
             gap: 40px;
 
-            .community-card{
+            .community-card {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -176,9 +176,9 @@ body {
                 gap: 10px;
 
 
-                p{
+                p {
                     font-size: $p-regular-size-4;
-                    color:$color-grey;
+                    color: $color-grey;
                 }
 
 
@@ -188,6 +188,44 @@ body {
 
     }
 
+    .unseen-story-container {
+        padding-block: 20px;
+    }
 
+    .unseen-story-wrapper {
+        @include base-container;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .left-story-image-container {
+            flex: 1;
+
+            img {
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+        }
+
+        .right-story-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+                font-size: $title-size-2;
+            }
+
+            p {
+                font-size: $p-regular-size-4;
+                color: $color-grey;
+            }
+        }
+
+
+    }
 
 }
