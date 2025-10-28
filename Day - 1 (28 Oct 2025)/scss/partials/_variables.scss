@@ -9,7 +9,7 @@ $color-silver : #F5F7FA;
 $color-white : #FFFFFF;
 
 // Primary colors
-$color-primary : #28CB8B;
+$color-primary : #4caf4f;
 $color-secondary : #263238;
 $color-info : #2194F3;
 
@@ -34,7 +34,18 @@ $color-success : #2e7d31;
 
 // =================== Typography =====================
 // Headlines
-$header-title-1 : 
-$header-title-2 : 
-$header-title-3 : 
-$header-title-4 : 
+$title-size-1 : 64px;
+$title-size-2 : 36px;
+$title-size-3 : 28px;
+$title-size-4 : 20px;
+
+// paragraph
+$p-regular-size-1 : 18px;
+$p-regular-size-2 : 16px;
+$p-regular-size-3 : 14px;
+$p-regular-size-4 : 12px;
+
+$p-medium-size-1 : 18px;
+$p-medium-size-2 : 16px;
+$p-medium-size-3 : 14px;
+$p-medium-size-4 : 12px;

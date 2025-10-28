@@ -1,3 +1,74 @@
-.header{
-    font-size: 20;
+@import './partials/mixins';
+@import './partials/variables';
+
+// importing Inter font from google fonts api
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: $p-regular-size-3;
+
+    main {
+        header {
+            background-color: $color-silver;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block: 22px;
+            gap: 14px;
+
+            ul {
+                list-style: none;
+                display: flex;
+                gap: 20px;
+
+                li a {
+                    text-decoration: none;
+                    color: $color-black;
+                }
+
+            }
+
+            // buttons
+            .auth-buttons {
+
+                display: flex;
+                gap: 14px;
+
+                .button-primary {
+                    @include button;
+                    background-color: $color-primary;
+                    color: $color-white;
+                }
+
+                .button-secondary {
+                    @include button;
+                    color: $color-primary
+                }
+            }
+
+        }
+
+
+    }
+
 }
