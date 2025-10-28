@@ -122,7 +122,24 @@ body {
     }
 
 
-    
+    .client-container {
+        @include base-container;
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-block: 20px;
+
+        h1 {
+            font-size: $title-size-2;
+        }
+
+        p {
+            font-size: $p-regular-size-4;
+        }
+
+
+    }
 
 
 
