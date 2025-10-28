@@ -29,6 +29,11 @@ body {
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     font-size: $p-regular-size-3;
+    background-color: $color-white;
+
+    section {
+        margin-block: 40px;
+    }
 
     main {
         header {
@@ -77,6 +82,7 @@ body {
     .hero-container {
         background-color: $color-silver;
         padding-block: 100px;
+        margin-top: 0;
     }
 
     .hero-wrapper {
@@ -128,7 +134,6 @@ body {
         display: flex;
         flex-direction: column;
         text-align: center;
-        padding-block: 20px;
 
         h1 {
             font-size: $title-size-2;
@@ -137,7 +142,20 @@ body {
         p {
             font-size: $p-regular-size-4;
             color: $color-grey;
+            line-height: 24px;
         }
+
+        .client-logos-container {
+            margin-block: 20px;
+
+            ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
     }
 
     .community-container {
@@ -227,5 +245,110 @@ body {
 
 
     }
+
+    .helping-business-container {
+        background-color: $color-silver;
+        padding-block: 100px;
+    }
+
+    .helping-business-wrapper {
+        @include base-container;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .left-helping-title-container {
+            flex: 1;
+
+            h2 {
+                font-size: $title-size-2;
+                font-weight: 600;
+
+                span {
+                    color: $color-primary;
+                }
+            }
+
+            p {
+                font-size: $p-regular-size-4;
+                color: $color-grey;
+                line-height: 24px;
+            }
+
+        }
+
+        .right-helping-impacts-container {
+            flex: 1;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 50px;
+            grid-row-gap: 30px;
+
+
+            .helping-impact-card {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                    aspect-ratio: 1 / 1;
+                }
+
+                .impact-counts-wrapper {
+                    p {
+                        font-size: $p-medium-size-4;
+                        color: $color-grey;
+                        line-height: 24px;
+                    }
+                }
+
+            }
+
+        }
+
+
+
+    }
+
+    .how-to-design-wrapper {
+        @include base-container;
+
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        gap: 20px;
+
+        .left-design-image-container {
+
+
+            img {
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+        }
+
+        .right-design-content-container {
+            display: grid;
+            gap: 20px;
+
+            h2 {
+                font-size: $title-size-2;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: $p-regular-size-4;
+                color: $color-grey;
+                line-height: 20px;
+            }
+
+        }
+
+
+    }
+
 
 }
