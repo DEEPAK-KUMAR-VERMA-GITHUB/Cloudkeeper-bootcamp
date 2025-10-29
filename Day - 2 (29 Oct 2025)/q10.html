@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students Data</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 50px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      button {
+        padding: 10px 20px;
+      }
+
+      table {
+        width: 100%;
+        margin-block: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <h1>Students Data</h1>
+      <button type="button" id="add_student">Add new student</button>
+    </div>
+
+    <!-- student data table -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th rowspan="2">S. No.</th>
+          <th rowspan="2">Student name</th>
+          <th colspan="5">Marks (0 - 100)</th>
+          <th rowspan="2">Average Marks</th>
+        </tr>
+
+        <tr>
+          <th>Subject 1</th>
+          <th>Subject 2</th>
+          <th>Subject 3</th>
+          <th>Subject 4</th>
+          <th>Subject 5</th>
+        </tr>
+      </thead>
+
+      <tbody id="table-body">
+        <!-- <tr>
+          <td>1</td>
+          <td>Ajit Baghel</td>
+          <td>52</td>
+          <td>63</td>
+          <td>85</td>
+          <td>89</td>
+          <td>79</td>
+          <td>80</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <script>
+      window.onload = loadStoredData;
+
+      var STORAGE_KEY = "studentData";
+
+      var allStudentsData = [];
+      var currentStudentData = {
+        name: "",
+        marks: [],
+        average: 0,
+      };
+
+      function loadStoredData() {
+        var storedData = localStorage.getItem(STORAGE_KEY);
+        if (storedData) {
+          allStudentsData = JSON.parse(storedData);
+
+          allStudentsData.forEach((studentData, index) => {
+            addIntoTable(studentData, index + 1);
+          });
+        }
+      }
+
+      function addIntoTable(studentData, slNo) {
+        var parentTableBody = document.getElementById("table-body");
+
+        var tableRow = document.createElement("tr");
+
+        // serial number
+        var tableColSlNo = document.createElement("td");
+        tableColSlNo.textContent = slNo;
+        tableRow.appendChild(tableColSlNo);
+
+        // student name
+        var tableColName = document.createElement("td");
+        tableColName.textContent = studentData.name;
+        tableRow.appendChild(tableColName);
+
+        // marks of 5 subjects
+        for (var col = 0; col < 5; col++) {
+          var tableData = document.createElement("td");
+          tableData.textContent = studentData.marks[col];
+          tableRow.appendChild(tableData);
+        }
+
+        // average
+        var tableColAverage = document.createElement("td");
+        tableColAverage.textContent = studentData.average;
+        tableRow.appendChild(tableColAverage);
+
+        // Append row to table
+        parentTableBody.appendChild(tableRow);
+      }
+
+      function getMark() {
+        var mark = prompt(
+          "Enter marks of subject " +
+            parseInt(currentStudentData.marks.length + 1)
+        );
+
+        if (isNaN(mark) || mark < 0 || mark > 100 || mark.trim() === "") {
+          alert("Invalid input. Please enter a number between 0 and 100.");
+          return getMark();
+        }
+
+        return mark;
+      }
+
+      function addStudent() {
+        const studentName = prompt("Enter Student's name : ");
+
+        // Regular expression: only letters and spaces allowed
+        const nameRegex = /^[A-Za-z\s]+$/;
+
+        // Check if entered name is valid
+        if (studentName.trim().length < 2) {
+          alert("Invalid student name — too short!");
+          return;
+        }
+
+        // Check if student name matches a valid name pattern
+        const isValid = nameRegex.test(studentName);
+
+        if (!isValid) {
+          alert("Invalid student name — only letters and spaces allowed!");
+          return;
+        }
+
+        currentStudentData.name = studentName;
+
+        // ask for marks of that student
+
+        for (var i = 0; i < 5; i++) {
+          var currentMark = getMark();
+          if (!isNaN(currentMark)) {
+            currentStudentData.marks.push(currentMark);
+          }
+        }
+
+        // calculate average of current student marks
+        var totalMarks = currentStudentData.marks.reduce(
+          (marks, currValue) => (marks = marks + parseInt(currValue)),
+          0
+        );
+
+        currentStudentData.average = parseFloat(totalMarks / 5).toFixed(2);
+
+        // add to student list
+        allStudentsData.push(currentStudentData);
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(allStudentsData));
+
+        addIntoTable(currentStudentData, allStudentsData.length);
+      }
+
+      var add_student_button = document.getElementById("add_student");
+
+      // check click event on the button
+      add_student_button.addEventListener("click", addStudent);
+    </script>
+  </body>
+</html>
