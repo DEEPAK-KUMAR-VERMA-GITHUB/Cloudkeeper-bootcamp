@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change color</title>
+    <style>
+        /* Base styling for the div */
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 50px auto;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="colorBox"></div>
+
+    <script>
+        // Get reference to the div
+        const box = document.getElementById('colorBox');
+
+        // Change color when mouse moves over it
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'tomato';
+        });
+
+        // Restore color when mouse moves out
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = 'lightblue';
+        });
+    </script>
+
+</body>
+</html>
