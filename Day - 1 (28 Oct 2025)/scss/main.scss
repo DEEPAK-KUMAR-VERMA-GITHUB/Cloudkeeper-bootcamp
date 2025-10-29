@@ -506,7 +506,30 @@ body {
 
         }
 
-        
+        .demo-container {
+            background-color: $color-silver;
+            padding-block: 30px;
+        }
+
+        .demo-container-wrapper {
+
+            @include base-container;
+
+            display: grid;
+            place-items: center;
+            gap: 20px;
+
+            h1 {
+                font-size: $title-size-2;
+                font-weight: 600;
+                max-width: 400px;
+                text-align: center;
+            }
+
+
+        }
+
+
 
     }
 
