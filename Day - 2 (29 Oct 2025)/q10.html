@@ -181,6 +181,11 @@
         // add to student list
         allStudentsData.push(currentStudentData);
 
+        // reset current student data
+        currentStudentData.name = "";
+        currentStudentData.marks = [];
+        currentStudentData.average = 0;
+
         localStorage.setItem(STORAGE_KEY, JSON.stringify(allStudentsData));
 
         addIntoTable(currentStudentData, allStudentsData.length);
