@@ -181,14 +181,14 @@
         // add to student list
         allStudentsData.push(currentStudentData);
 
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(allStudentsData));
+
+        addIntoTable(currentStudentData, allStudentsData.length);
+
         // reset current student data
         currentStudentData.name = "";
         currentStudentData.marks = [];
         currentStudentData.average = 0;
-
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(allStudentsData));
-
-        addIntoTable(currentStudentData, allStudentsData.length);
       }
 
       var add_student_button = document.getElementById("add_student");
