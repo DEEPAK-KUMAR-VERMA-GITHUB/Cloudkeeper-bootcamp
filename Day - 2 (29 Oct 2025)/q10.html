@@ -45,6 +45,7 @@
           <th rowspan="2">S. No.</th>
           <th rowspan="2">Student name</th>
           <th colspan="5">Marks (0 - 100)</th>
+          <th rowspan="2">Total Marks</th>
           <th rowspan="2">Average Marks</th>
         </tr>
 
@@ -66,6 +67,7 @@
           <td>85</td>
           <td>89</td>
           <td>79</td>
+          <td>500</td>
           <td>80</td>
         </tr> -->
       </tbody>
@@ -80,6 +82,7 @@
       var currentStudentData = {
         name: "",
         marks: [],
+        total:0,
         average: 0,
       };
 
@@ -115,6 +118,11 @@
           tableData.textContent = studentData.marks[col];
           tableRow.appendChild(tableData);
         }
+
+        // Total makrs
+         var tableColTotal = document.createElement("td");
+        tableColTotal.textContent = studentData.total;
+        tableRow.appendChild(tableColTotal);
 
         // average
         var tableColAverage = document.createElement("td");
@@ -176,6 +184,7 @@
           0
         );
 
+        currentStudentData.total = totalMarks;
         currentStudentData.average = parseFloat(totalMarks / 5).toFixed(2);
 
         // add to student list
@@ -188,6 +197,7 @@
         // reset current student data
         currentStudentData.name = "";
         currentStudentData.marks = [];
+        currentStudentData.total = 0;
         currentStudentData.average = 0;
       }
 
