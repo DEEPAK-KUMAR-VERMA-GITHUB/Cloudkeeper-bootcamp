@@ -1,25 +1,33 @@
 1. Find and terminate the top memory consuming process on your system
-
 command : 
-    ps aux --sort=%mem | head -n 10
+    ps aux --sort=-%mem | head -n 10
     sudo kill -9 12850
 
 
 2. Create a user named devops and grant them sudo privileges.
-
 command : 
     sudo adduser devops
     sudo usermod -aG sudo devops
 
 3. Connect to a remote server, create a directory, and copy files into it using SCP.
-
+command : 
+    scp process.txt dhairya-goyal@10.1.212.122:/home/dhairya-goyal
 
 4. List all active processes and save only those containing the word java into a file.
 command : 
     ps aux | grep java | grep -v grep > all_java_processes.txt
 
 5. Generate an SSH key pair and configure it for two different remote servers.
+command : 
+        ssh-keygen -t rsa -b 4096 -C "deepak-ssh-10.1.212.122"
+        // generate a pair of keys 
+        // use passphrases (optional)
+        // id_rsa (private key must be stored securely)  
+        // id_rsa.pub (public key should be sent on remote server)
 
+        ssh-copy-id dhairya-goyal@10.1.212.122
+
+        ssh dhairya-goyal@10.1.212.122 (test the connection on server)
 
 6. Find all lines containing “error” in /var/log/syslog and redirect them to errors_found.txt
 command : 
@@ -28,7 +36,7 @@ command :
 
 7. Find all .conf files in /etc, sort them alphabetically, and save to conf_list.txt.
 command : 
-    find /etc -type f -name "*.config" | sort > conf_list.txt   -> Note :  permission denied for some files
+    find /etc -type f -name "*.config" | sort > conf_list.txt   -> Note :  permission denied for some files like system protected directories
 
 
 8. Display the total number of unique shell types listed in /etc/passwd and save to shell_count.txt
@@ -36,7 +44,41 @@ command :
     awk -F: '{print $7}' /etc/passwd | sort | uniq | wc -l > shell_count.txt    
 
 9. Explore vi/vim for  Creating a text file. Understand cursor movement, switching input mode (append, insert etc), deleting command, pasting content, undo , redo ,search , save and quit operations in vim. 
+    Modes:
 
+        i: Insert mode.
+
+        a: Append mode.
+
+        Esc: Return to Normal mode.
+
+        Navigation:
+
+        h, j, k, l → left, down, up, right.
+
+        gg → go to top; G → go to bottom.
+
+    Editing:
+
+        dd → delete line.
+
+        p → paste.
+
+        u → undo.
+
+        Ctrl + r → redo.
+
+        /word → search for “word”.
+
+    Saving and exiting:
+
+        :w → save.
+
+        :q → quit.
+
+        :wq or ZZ → save and quit.
+
+        :q! → quit without saving.
 
 10. Reset the current user password and reboot the system form shell. 
 command : 
