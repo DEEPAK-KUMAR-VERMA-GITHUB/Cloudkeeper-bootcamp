@@ -36,7 +36,7 @@ command :
 
 7. Find all .conf files in /etc, sort them alphabetically, and save to conf_list.txt.
 command : 
-    find /etc -type f -name "*.config" | sort > conf_list.txt   -> Note :  permission denied for some files like system protected directories
+    find /etc -type f -name "*.conf" | sort > conf_list.txt   -> Note :  permission denied for some files like system protected directories
 
 
 8. Display the total number of unique shell types listed in /etc/passwd and save to shell_count.txt
@@ -87,13 +87,17 @@ command :
     current password : 
     new password : 
     confirm password : 
+    
+    sudo reboot
 
 
 11. Zip the content of your home directory via tar and send it via scp to other person laptop. Unzip the content on other person laptop via tar. 
 command : 
     tar -czvf home_backup.tar.gz ~/
 
-    scp home_backup.tar.gz user@remote_host:/path/to/destination
+    scp home_backup.tar.gz dhairya-goyal@10.1.212.122:/home/dhairya-goyal
+
+    ssh dhairya-goyal@10.1.212.122
 
 
 
