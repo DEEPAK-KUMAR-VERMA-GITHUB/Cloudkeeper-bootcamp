@@ -1,4 +1,4 @@
-import bank_account.BankAccount;
+//import bank_account.BankAccount;
 import calculator.Calculator;
 import constructor.Book;
 import constructor.Car;
@@ -6,6 +6,7 @@ import pojo.Customer;
 import static_keywords.Counter;
 import static_keywords.MathUtils;
 import student_report.StudentReport;
+import combined.mini_banking.BankAccount;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,19 +45,30 @@ public class Main {
 //        System.out.println(car1);
 //        System.out.println(car2);
 
-        List<Customer> customers = new ArrayList<>(3);
+//        List<Customer> customers = new ArrayList<>(3);
+//
+//        Customer customer1 = new Customer(1, "Aman Kumar", "aman@gmail.com");
+//        Customer customer2 = new Customer(1, "Rajesh Kumar", "rajesh@gmail.com");
+//        Customer customer3 = new Customer(1, "Karan Kumar", "karan@gmail.com");
+//
+//        customers.add(customer1);
+//        customers.add(customer2);
+//        customers.add(customer3);
+//
+//        for(Customer c : customers){
+//            System.out.println(c);
+//        }
 
-        Customer customer1 = new Customer(1, "Aman Kumar", "aman@gmail.com");
-        Customer customer2 = new Customer(1, "Rajesh Kumar", "rajesh@gmail.com");
-        Customer customer3 = new Customer(1, "Karan Kumar", "karan@gmail.com");
-
-        customers.add(customer1);
-        customers.add(customer2);
-        customers.add(customer3);
-
-        for(Customer c : customers){
-            System.out.println(c);
+        try{
+            BankAccount account1 = new BankAccount("Aman");
+            account1.deposit(500);
+            account1.withdraw(200);
+            System.out.println(account1);
+        }catch (IllegalArgumentException e){
+            System.out.printf(e.getMessage());
         }
+
+
     }
 
 }

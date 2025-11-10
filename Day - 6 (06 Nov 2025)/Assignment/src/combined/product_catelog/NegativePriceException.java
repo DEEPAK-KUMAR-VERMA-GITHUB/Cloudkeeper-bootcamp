@@ -1,0 +1,7 @@
+package combined.product_catelog;
+
+public class NegativePriceException extends RuntimeException {
+    public NegativePriceException(String message) {
+        super(message);
+    }
+}
