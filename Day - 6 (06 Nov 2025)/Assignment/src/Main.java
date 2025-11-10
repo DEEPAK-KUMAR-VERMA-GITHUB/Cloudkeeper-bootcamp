@@ -1,7 +1,11 @@
 import bank_account.BankAccount;
 import calculator.Calculator;
+import static_keywords.Counter;
+import static_keywords.MathUtils;
 import student_report.StudentReport;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.OptionalInt;
 
 public class Main {
@@ -15,8 +19,17 @@ public class Main {
 //
 //        System.out.printf("%s's total marks is : %.0f and average is %.2f", student1.getStudentName(), student1.getTotal().orElse(0f), student1.getAverageMarks().orElse(0f));
 
-        BankAccount customer1 = new BankAccount(123456789, "Aman Kumar", 200);
-        System.out.println(customer1);
+//        BankAccount customer1 = new BankAccount(123456789, "Aman Kumar", 200);
+//        System.out.println(customer1);
+
+//        Counter c1 = new Counter();
+//        Counter c2 = new Counter();
+//
+//        System.out.println(Counter.getNumberOfInstances());
+
+//        System.out.println(MathUtils.max(5,6));
+//        System.out.println(MathUtils.min(5,6));
+//        System.out.println(MathUtils.average(Arrays.asList(1,2,3,4,5)));
 
 
     }
