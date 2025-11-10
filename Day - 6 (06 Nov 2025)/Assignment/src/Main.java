@@ -1,5 +1,7 @@
 import bank_account.BankAccount;
 import calculator.Calculator;
+import constructor.Book;
+import constructor.Car;
 import static_keywords.Counter;
 import static_keywords.MathUtils;
 import student_report.StudentReport;
@@ -30,6 +32,15 @@ public class Main {
 //        System.out.println(MathUtils.max(5,6));
 //        System.out.println(MathUtils.min(5,6));
 //        System.out.println(MathUtils.average(Arrays.asList(1,2,3,4,5)));
+
+//        Book book1 = new Book("Head First Java", "Kathy Sierra & Bert Bates", 1036.60F);
+//        System.out.println(book1);
+
+        Car car1 = new Car("Hyundai Creta EX(O) 1.5 Petrol ");
+        Car car2 = new Car("Jeep Compass Longitude 2.0 Diesel Sandstorm Edition", 2112000);
+
+        System.out.println(car1);
+        System.out.println(car2);
 
 
     }
