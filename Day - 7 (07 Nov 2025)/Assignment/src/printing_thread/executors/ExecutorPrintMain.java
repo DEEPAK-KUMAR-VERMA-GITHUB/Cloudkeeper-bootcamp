@@ -1,16 +1,23 @@
 package printing_thread.executors;
 
+import printing_thread.thread_class.PrintThread;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ExecutorPrintMain {
     public static void main(String[] args) {
-        ExecutorService service = Executors.newSingleThreadExecutor();
+        Object lock = new Object();
 
-        service.submit(new PrintTable(2));
-        service.submit(new PrintTable(4));
+        int[] numbers = {2, 4};
+        int totalTasks = numbers.length;
+        try (ExecutorService service = Executors.newFixedThreadPool(2)) {
 
-        service.shutdown();
+            for (int i = 0; i < totalTasks; i++) {
+                service.submit(new PrintTable(numbers[i], lock, i, totalTasks));
+            }
 
+            service.shutdown();
+        }
     }
 }
