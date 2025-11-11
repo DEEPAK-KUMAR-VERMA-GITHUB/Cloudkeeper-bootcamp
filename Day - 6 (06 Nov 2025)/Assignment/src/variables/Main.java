@@ -1,8 +1,6 @@
 package variables;
 
 import java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static int getDigitSum(int number) {
         int sum = 0;
@@ -65,7 +63,6 @@ public class Main {
 //        int inputNumber = sc.nextInt();
 //        System.out.println(getDigitReversed(inputNumber));
 
-//        ============ Classes, Methods and Constructors=======
         System.out.println();
     }
 }
