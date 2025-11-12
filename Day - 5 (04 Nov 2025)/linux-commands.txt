@@ -99,6 +99,7 @@ command :
 
     ssh dhairya-goyal@10.1.212.122
 
+    tar -xzvf home_backup.tar.gz ~/home/dhairya-goyal/
 
 
 
