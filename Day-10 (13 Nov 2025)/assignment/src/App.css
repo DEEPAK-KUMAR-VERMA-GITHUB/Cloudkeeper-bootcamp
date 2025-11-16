@@ -1,0 +1,177 @@
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .nav-left{
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+}
+
+.mainContainer{
+    display: grid;
+    height: calc(100vh - 60px); /* Adjusting for navbar height */
+    place-items: center;
+    gap: 1.25rem;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: #0056b3;
+    }
+}
+
+
+.dashboardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+    max-width: 90%;
+    text-align: center;
+
+    h1{
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    artical{
+        font-size: 18px;
+        max-width: 600px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .imageContainer{
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        width: 100%;
+
+        img{
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+.counterPage{
+    margin-block: 2rem;
+    height: 100vh;
+    text-align: center;
+
+    .counter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 2rem;
+
+        .countDisplay{
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+        .actions{
+            display: flex;
+            gap: 10px;
+
+            button{
+                padding: 10px 15px;
+                font-size: 18px;
+                outline: none;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                transition: transform 0.2s;
+
+                &:hover{
+                    transform : scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.digitalWatchPage{
+    margin-block: 2rem;
+    height: 100vh;
+    text-align: center;
+
+    .watch{
+        font-size: 4rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
+.pagenotfound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    gap: 20px;
+
+    h2{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .btn{
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+
+        &:hover{
+            background-color: #0056b3;
+        }
+    }
+}
