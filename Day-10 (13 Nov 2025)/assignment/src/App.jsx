@@ -1,14 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage.jsx';
-
-import './App.css';
 import ProtectedRoute from './_components/ProtectedRoute.jsx';
 import Layout from './pages/Layout.jsx';
 import CounterPage from './pages/CounterPage.jsx';
 import DigitalWatchPage from './pages/DigitalWatch.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import './App.css';
 
 function App() {
   const checkAuthentication = () => {
@@ -26,8 +25,7 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsAuthenticated(false);
-  }
-  
+  }  
 
 
   return (
@@ -42,7 +40,7 @@ function App() {
       />
 
       <Route
-        path='/dashboard/*'
+        path='/dashboard'
         element={
           <ProtectedRoute isAuthenticated={isAuthenticated} >
             <Layout logout={handleLogout} />
@@ -53,8 +51,6 @@ function App() {
 
         <Route path='counter' element={<CounterPage />} />
         <Route path='watch' element={<DigitalWatchPage />} />
-
-        <Route path='*' element={ <NotFound /> } />
 
 
       </Route>

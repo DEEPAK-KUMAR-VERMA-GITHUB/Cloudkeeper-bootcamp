@@ -1,8 +1,12 @@
 import React from 'react'
 import digitCounterImage from '../assets/digital-counter.png'
 import digitalWatchImage from '../assets/digital-watch.png'
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="dashboardContainer">
             <h1>Welcome to the Dashboard</h1>
@@ -13,9 +17,9 @@ const Dashboard = () => {
                     You can log out at any time by clicking the "Logout" button in the navigation bar.</p>
 
 
-                <div className='imageContainer' >
-                    <img src={digitCounterImage} alt="Digital Counter" />
-                    <img src={digitalWatchImage} alt="Digital Watch" />
+                <div className='imageContainer'>
+                    <img src={digitCounterImage} alt="Digital Counter" onClick={() => navigate('counter')} />
+                    <img src={digitalWatchImage} alt="Digital Watch" onClick={() => navigate('watch')} />
                 </div>
 
             </article>
